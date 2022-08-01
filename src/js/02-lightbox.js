@@ -17,19 +17,11 @@ const imageEl = galleryItems
 
 gallery.insertAdjacentHTML('afterbegin', imageEl);
 
-gallery.addEventListener('click', addGalleryItems);
-function addGalleryItems(event) {
-  event.preventDefault();
-  if (event.target.nodeName !== 'IMG') {
-    return;
-  }
-
-  const lightbox = new SimpleLightbox('.gallery a', {
-    captionsData: 'alt',
-    captionPosition: 'bottom',
-    captionDelay: 250,
-  });
-}
+const lightbox = new SimpleLightbox('.gallery a', {
+  captionsData: 'alt',
+  captionPosition: 'bottom',
+  captionDelay: 250,
+});
 
 console.log(galleryItems);
 console.log(gallery);
